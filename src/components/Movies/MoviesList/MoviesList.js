@@ -1,6 +1,6 @@
 import React from "react";
 import Pagination from "react-js-pagination";
-import MovieItem from "../../components/MovieItem/MovieItem";
+import MovieItem from "../MovieItem/MovieItem";
 function MoviesList(props) {
   const handlePageChange = pageNumber => {
     props.selectedPageChanged(pageNumber);

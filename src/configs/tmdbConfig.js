@@ -22,5 +22,12 @@ export const config = {
   }`,
   API_MOVIE_DETAILS: `https://api.themoviedb.org/3/movie/{movie_id}?api_key=${
     process.env.REACT_APP_TMDB_API_KEY
+  }`,
+  API_MOVIE_DETAILS_CREDITS: `https://api.themoviedb.org/3/movie/{movie_id}/credits?api_key=${
+    process.env.REACT_APP_TMDB_API_KEY
+  }`,
+
+  API_MOVIE_DETAILS_RECOMMENDATIONS: `https://api.themoviedb.org/3/movie/{movie_id}/recommendations?api_key=${
+    process.env.REACT_APP_TMDB_API_KEY
   }`
 };

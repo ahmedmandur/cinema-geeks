@@ -1,6 +1,6 @@
 import React from "react";
 import history from "../../history";
-import MoviesList from "../../components/MoviesList/MoviesList";
+import MoviesList from "../../components/Movies/MoviesList/MoviesList";
 import Helmet from "react-helmet";
 import Spinner from "../../components/Ui/Spinner/Spinner";
 import { fetchMoviesListSearch, fetchGenres } from "../../services/api";

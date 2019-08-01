@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import Helmet from "react-helmet";
 import { fetchMoviesListHome, fetchGenres } from "../../services/api";
 import Spinner from "../../components/Ui/Spinner/Spinner";
-import MoviesList from "../../components/MoviesList/MoviesList";
-import MoviesFilter from "../../components/MoviesFilter/MoviesFilter";
+import MoviesList from "../../components/Movies/MoviesList/MoviesList";
+import MoviesFilter from "../../components/Ui/MoviesFilter/MoviesFilter";
 
 const Home = () => {
   const [genrsList, setGenrsList] = useState({});

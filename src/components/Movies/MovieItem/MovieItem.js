@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { config } from "../../configs/tmdbConfig";
-import { urlSlug } from "../../Utils/shared";
+import { config } from "../../../configs/tmdbConfig";
+import { urlSlug } from "../../../Utils/shared";
 const MovieItem = props => {
   const { movie, genres } = props;
 

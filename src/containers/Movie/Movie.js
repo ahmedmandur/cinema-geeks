@@ -4,6 +4,8 @@ import Helmet from "react-helmet";
 import { fetchMovie } from "../../services/api";
 import { config } from "../../configs/tmdbConfig";
 import { moneySpace, convertMinsToHrsMins } from "../../Utils/shared";
+import CreditList from "../../components/Movies/Cradits/CreditList/CreditList";
+import Recommendations from "../../components/Movies/Recommendations/Recommendations";
 export default class Movie extends Component {
   state = {
     isFetched: false,
@@ -15,6 +17,16 @@ export default class Movie extends Component {
       this.setState({ movie: res.data });
       this.setState({ isFetched: true });
     });
+  }
+
+  async componentDidUpdate(prevProps, prevState) {
+    if (prevProps.match.params.movieId !== this.props.match.params.movieId) {
+      this.setState({ isFetched: false });
+      await fetchMovie(this.props.match.params.movieId).then(res => {
+        this.setState({ movie: res.data });
+        this.setState({ isFetched: true });
+      });
+    }
   }
 
   render() {
@@ -86,12 +98,13 @@ export default class Movie extends Component {
                     return <li key={item.id}>{item.name}</li>;
                   })}
               </ul>
-              {/* <CreditList />
+              <CreditList movId={this.props.match.params.movieId} />
+              {/* 
               <ImagesList /> */}
             </div>
           </div>
         </div>
-        {/* <RecommendationsList /> */}
+        <Recommendations movId={this.props.match.params.movieId} />
       </div>
     );
   }

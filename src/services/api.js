@@ -30,3 +30,15 @@ export const fetchGenres = () => {
 export const fetchMovie = movId => {
   return axios.get(config.API_MOVIE_DETAILS.replace("{movie_id}", movId));
 };
+
+export const fetchCredit = movId => {
+  return axios.get(
+    config.API_MOVIE_DETAILS_CREDITS.replace("{movie_id}", movId)
+  );
+};
+
+export const fetchRecommendations = movId => {
+  return axios.get(
+    config.API_MOVIE_DETAILS_RECOMMENDATIONS.replace("{movie_id}", movId)
+  );
+};
