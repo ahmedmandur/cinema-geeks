@@ -11,6 +11,7 @@ export const convertMinsToHrsMins = mins => {
   m = m < 10 ? "0" + m : m;
   return `${h} Hours, ${m} Minutes`;
 };
+
 export const urlSlug = title => {
   return title
     .trim()

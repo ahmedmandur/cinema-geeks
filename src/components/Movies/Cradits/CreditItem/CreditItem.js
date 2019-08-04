@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { config } from "../../../../configs/tmdbConfig";
 
 export default function CreditItem(props) {
@@ -15,7 +14,7 @@ export default function CreditItem(props) {
       
       </Link> */}
 
-      <a className="credit-img">
+      <a className="credit-img" href="/">
         {credit.profile_path !== null && (
           <img
             src={`${config.API_IMAGE.small}/${credit.profile_path}`}
