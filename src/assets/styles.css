@@ -188,7 +188,7 @@ header .content .languages ul li a.active {
 
 .movies .movies-inner {
   margin-left: -33px;
-  margin-right: -33px;
+  margin-right: -22px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -892,5 +892,12 @@ header .content .languages ul li a.active {
   }
   .logo > span {
     font-size: 18px !important;
+  }
+  .movie-single .movie-details {
+    margin-left: 0 !important;
+  }
+
+  .movie-single .movie-single-inner {
+    display: block !important;
   }
 }
