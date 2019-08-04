@@ -871,3 +871,26 @@ header .content .languages ul li a.active {
   img {
   transform: scale(1.05);
 }
+
+@media (max-width: 556px) {
+  .logo > span {
+    font-size: 20px !important;
+  }
+}
+
+@media (max-width: 350px) {
+  .logo > span {
+    font-size: 18px !important;
+  }
+}
+@media (max-width: 482px) {
+  .content {
+    display: block !important;
+  }
+  .movies .movie {
+    width: 100% !important;
+  }
+  .logo > span {
+    font-size: 18px !important;
+  }
+}
