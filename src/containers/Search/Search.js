@@ -1,12 +1,13 @@
-import React from "react";
-import history from "../../history";
-import MoviesList from "../../components/Movies/MoviesList/MoviesList";
-import Helmet from "react-helmet";
-import Spinner from "../../components/Ui/Spinner/Spinner";
-import { fetchMoviesListSearch, fetchGenres } from "../../services/api";
+import React from 'react';
+import history from '../../history';
+import MoviesList from '../../components/Movies/MoviesList/MoviesList';
+import Helmet from 'react-helmet';
+import Spinner from '../../components/Ui/Spinner/Spinner';
+import { fetchMoviesListSearch, fetchGenres } from '../../services/api';
+import NoItemsFound from '../../components/Movies/NoItemsFound/NoItemsFound';
 class Search extends React.Component {
   state = {
-    isLoading: false,
+    isLoading: true,
     results: {},
     totalResults: 0,
     activePage: 0,
@@ -21,14 +22,20 @@ class Search extends React.Component {
 
   componentDidMount() {
     this.fetchData(1);
+    this.setState({ isLoading: false });
   }
 
   fetchData = page => {
     fetchGenres().then(res => {
       this.setState({ genresList: res.data });
     });
+    let queryValue = this.props.match.params.query;
 
-    fetchMoviesListSearch(this.props.query, page).then(res => {
+    if (!queryValue) {
+      queryValue = this.props.query;
+    }
+
+    fetchMoviesListSearch(queryValue, page).then(res => {
       this.setState({
         results: res.data.results,
         totalResults: res.data.total_results,
@@ -51,7 +58,7 @@ class Search extends React.Component {
 
         {this.state.isLoading ? (
           <Spinner />
-        ) : (
+        ) : this.state.results.length > 0 ? (
           <MoviesList
             movies={this.state.results}
             selectedPageChanged={ev => this.handleSelectedPageChanged(ev)}
@@ -59,6 +66,8 @@ class Search extends React.Component {
             totalResults={this.state.totalResults}
             genres={this.state.genresList}
           />
+        ) : (
+          <NoItemsFound />
         )}
       </div>
     );

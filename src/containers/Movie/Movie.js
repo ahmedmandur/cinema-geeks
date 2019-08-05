@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import Helmet from "react-helmet";
+import React, { Component } from 'react';
+import Helmet from 'react-helmet';
 
-import { fetchMovie } from "../../services/api";
-import { config } from "../../configs/tmdbConfig";
-import { moneySpace, convertMinsToHrsMins } from "../../Utils/shared";
-import CreditList from "../../components/Movies/Cradits/CreditList/CreditList";
-import Recommendations from "../../components/Movies/Recommendations/Recommendations";
+import { fetchMovie } from '../../services/api';
+import { config } from '../../configs/tmdbConfig';
+import { moneySpace, convertMinsToHrsMins } from '../../Utils/shared';
+import CreditList from '../../components/Movies/Cradits/CreditList/CreditList';
+import Recommendations from '../../components/Movies/Recommendations/Recommendations';
 export default class Movie extends Component {
   state = {
     isFetched: false,
@@ -33,7 +33,7 @@ export default class Movie extends Component {
     if (!this.state.isFetched) return <div className="loading-box" />;
 
     return (
-      <div>
+      <React.Fragment>
         <Helmet>
           <title>{this.state.movie.title} | Cinema Geeks</title>
         </Helmet>
@@ -41,7 +41,8 @@ export default class Movie extends Component {
           <div className="movie-single-inner">
             <div
               className={`movie-rating ${this.state.movie.vote_average >= 7 &&
-                "movie-rating-positive"}`}>
+                'movie-rating-positive'}`}
+            >
               {this.state.movie.vote_average}
             </div>
             <div className="movie-poster">
@@ -64,7 +65,7 @@ export default class Movie extends Component {
                   {this.state.movie.overview}
                 </div>
               ) : (
-                ""
+                ''
               )}
               {this.state.movie.release_date ? (
                 <div className="movie-item">
@@ -72,21 +73,21 @@ export default class Movie extends Component {
                   {this.state.movie.release_date}
                 </div>
               ) : (
-                ""
+                ''
               )}
               {this.state.movie.budget ? (
                 <div className="movie-item">
                   <span>Budget:</span>$ {moneySpace(this.state.movie.budget)}
                 </div>
               ) : (
-                ""
+                ''
               )}
               {this.state.movie.revenue ? (
                 <div className="movie-item">
                   <span>Revenue:</span>$ {moneySpace(this.state.movie.revenue)}
                 </div>
               ) : (
-                ""
+                ''
               )}
               <div className="movie-item">
                 <span>Duration:</span>
@@ -105,7 +106,7 @@ export default class Movie extends Component {
           </div>
         </div>
         <Recommendations movId={this.props.match.params.movieId} />
-      </div>
+      </React.Fragment>
     );
   }
 }

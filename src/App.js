@@ -1,15 +1,16 @@
-import React, { Suspense } from "react";
-import TopNavbar from "./components/Ui/TopNavbar/TopNavbar";
-import { Router, Switch, Route } from "react-router-dom";
-import Spinner from "./components/Ui/Spinner/Spinner";
-import "./assets/styles.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import history from "./history";
-import Search from "./containers/Search/Search";
+import React, { Suspense } from 'react';
+import TopNavbar from './components/Ui/TopNavbar/TopNavbar';
+import { Router, Switch, Route } from 'react-router-dom';
+import Spinner from './components/Ui/Spinner/Spinner';
+import './assets/styles.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import history from './history';
+import Search from './containers/Search/Search';
+import Footer from './components/Ui/Footer/Footer';
 class App extends React.Component {
   state = {
-    query: ""
+    query: ''
   };
 
   handleSearchChanged = searchValue => {
@@ -17,14 +18,14 @@ class App extends React.Component {
       this.setState({ query: searchValue });
       history.push(`/search/${searchValue}/1`);
     } else {
-      this.setState({ query: "" });
-      history.push("/");
+      this.setState({ query: '' });
+      history.push('/');
     }
   };
 
   render() {
-    const HomeComponent = React.lazy(() => import("./containers/Home/Home"));
-    const MovieComponent = React.lazy(() => import("./containers/Movie/Movie"));
+    const HomeComponent = React.lazy(() => import('./containers/Home/Home'));
+    const MovieComponent = React.lazy(() => import('./containers/Movie/Movie'));
 
     return (
       <Router history={history}>
@@ -48,6 +49,7 @@ class App extends React.Component {
               </Suspense>
             </Switch>
           </div>
+          <Footer />
         </div>
       </Router>
     );
