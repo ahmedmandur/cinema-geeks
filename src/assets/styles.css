@@ -205,6 +205,8 @@ header .content .languages ul li a.active {
   justify-content: flex-end;
   margin-right: 38px;
   margin-bottom: 25px;
+
+  padding-top: 10px;
 }
 
 .movies .movies-filter ul {
@@ -903,6 +905,10 @@ header .content .languages ul li a.active {
 
   .movie-single .movie-single-inner {
     display: block !important;
+  }
+  .container {
+    padding-left: 1px;
+    padding-right: 1px;
   }
 }
 
