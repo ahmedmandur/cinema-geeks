@@ -910,6 +910,13 @@ header .content .languages ul li a.active {
     padding-left: 1px;
     padding-right: 1px;
   }
+  .credits .credit-item {
+    margin: 0 7px 30px !important;
+  }
+
+  .pswp-gallery .pswp-thumbnails .pswp-thumbnail {
+    width: 160px !important;
+  }
 }
 
 .not-found-home {
