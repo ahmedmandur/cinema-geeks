@@ -16,6 +16,7 @@ const MovieItem = props => {
           "movie-rating-positive"}`}>
         {movie.vote_average}
       </div>
+      <div className="movie-year">{movie.release_date.split("-")[0]}</div>
       <Link
         to={`/movie/${movie.id}/${urlSlug(movie.title)}`}
         className="movie-poster">

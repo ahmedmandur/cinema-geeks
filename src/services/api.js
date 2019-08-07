@@ -42,3 +42,15 @@ export const fetchRecommendations = movId => {
     config.API_MOVIE_DETAILS_RECOMMENDATIONS.replace("{movie_id}", movId)
   );
 };
+
+export const fetchImages = movId => {
+  return axios.get(
+    config.API_MOVIE_DETAILS_IMAGES.replace("{movie_id}", movId)
+  );
+};
+
+export const fetchTrailers = movId => {
+  return axios.get(
+    config.API_MOVIE_DETAILS_TRAILERS.replace("{movie_id}", movId)
+  );
+};

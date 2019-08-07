@@ -9,11 +9,13 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-js-pagination": "^3.0.2",
+    "react-photoswipe": "^1.3.0",
     "react-redux": "^7.1.0",
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "react-slick": "^0.24.0",
+    "react-youtube-modal": "^1.1.1",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "slick-carousel": "^1.8.1"

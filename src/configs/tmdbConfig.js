@@ -5,6 +5,8 @@ export const config = {
     large: "https://image.tmdb.org/t/p/w500/",
     original: "https://image.tmdb.org/t/p/original/"
   },
+  API_YOUTUBE_TRAILER: "https://www.youtube.com/watch?v={vidId}",
+  API_YOUTUBE_THUMB: "https://img.youtube.com/vi/{vidId}/mqdefault.jpg",
   API_POPULAR: `https://api.themoviedb.org/3/movie/popular?api_key=${
     process.env.REACT_APP_TMDB_API_KEY
   }`,
@@ -26,8 +28,13 @@ export const config = {
   API_MOVIE_DETAILS_CREDITS: `https://api.themoviedb.org/3/movie/{movie_id}/credits?api_key=${
     process.env.REACT_APP_TMDB_API_KEY
   }`,
-
   API_MOVIE_DETAILS_RECOMMENDATIONS: `https://api.themoviedb.org/3/movie/{movie_id}/recommendations?api_key=${
+    process.env.REACT_APP_TMDB_API_KEY
+  }`,
+  API_MOVIE_DETAILS_IMAGES: `https://api.themoviedb.org/3/movie/{movie_id}/images?api_key=${
+    process.env.REACT_APP_TMDB_API_KEY
+  }`,
+  API_MOVIE_DETAILS_TRAILERS: `https://api.themoviedb.org/3/movie/{movie_id}/trailers?api_key=${
     process.env.REACT_APP_TMDB_API_KEY
   }`
 };
